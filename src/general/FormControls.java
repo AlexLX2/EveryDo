@@ -7,6 +7,9 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 
+import java.sql.SQLException;
+import java.util.List;
+
 public class FormControls {
     @FXML
     private ListView mainList;
@@ -19,7 +22,10 @@ public class FormControls {
 
 
     public void initialize() {
-        mainList.getItems().add("123");
+
+
+        fillList();
+
 
         btnAdd.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
             @Override
@@ -27,6 +33,8 @@ public class FormControls {
                 String text = txtAdd.getCharacters().toString();
                 if (!text.equals(""))
                     mainList.getItems().add(text);
+                writeTaskIntoDB(text);
+                txtAdd.setText("");
             }
         });
 
@@ -71,4 +79,22 @@ public class FormControls {
 
     }
 
+    public void fillList() {
+        try {
+            List<Task> list = DBWork.getInstance().getAllRecords();
+            for (Task t : list) {
+                mainList.getItems().add(t.getHeader());
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void writeTaskIntoDB(String header) {
+        try {
+            DBWork.getInstance().insertRecord(header);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }

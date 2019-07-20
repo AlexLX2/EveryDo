@@ -3,6 +3,8 @@ package general;
 import org.sqlite.JDBC;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class DBWork {
 
@@ -15,7 +17,8 @@ public class DBWork {
 
         DriverManager.registerDriver(new JDBC());
         this.connection = DriverManager.getConnection(CONNSTR);
-        System.out.println("База подключена");
+        Task.lastID = getLastID();
+        //System.out.println("База подключена");
 
     }
 
@@ -25,17 +28,18 @@ public class DBWork {
         return ourInstance;
     }
 
-    public void getRecord() {
+    public List<Task> getAllRecords() {
+        List<Task> list = new ArrayList<>();
         try {
             Statement statement = this.connection.createStatement();
             ResultSet resultSet = statement.executeQuery("SELECT * FROM TASK_HEADERS");
             while (resultSet.next()) {
-                System.out.println(resultSet.getInt("id"));
-                System.out.println(resultSet.getString("header"));
+                list.add(new Task(resultSet.getInt("id"), resultSet.getString("header")));
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        return list;
     }
 
     public Task getRecord(int id) {
@@ -43,7 +47,6 @@ public class DBWork {
         try {
             Statement statement = this.connection.createStatement();
             ResultSet resultSet = statement.executeQuery("SELECT * FROM TASK_HEADERS WHERE ID = " + id);
-
             while (resultSet.next()) {
                 header = resultSet.getString("header");
             }
@@ -53,18 +56,33 @@ public class DBWork {
         return new Task(id, header);
     }
 
-    public void insertRecord(Task task) {
+    public void insertRecord(String header) {
         try (PreparedStatement statement = this.connection.prepareStatement(
                 "INSERT INTO TASK_HEADERS(`id`, `header`) " +
                         "VALUES(?, ?)")) {
-            statement.setObject(1, task.getId());
-            statement.setObject(2, task.getHeader());
+            statement.setObject(1, ++Task.lastID);
+            statement.setObject(2, header);
             // Выполняем запрос
             statement.execute();
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
+    }
+
+    public int getLastID() {
+        int lastID = 0;
+        try {
+            Statement statement = this.connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("SELECT MAX(ID) AS ID FROM TASK_HEADERS");
+            while (resultSet.next()) {
+                lastID = resultSet.getInt("id");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return lastID;
     }
 
 }
