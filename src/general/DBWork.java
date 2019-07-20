@@ -38,4 +38,33 @@ public class DBWork {
         }
     }
 
+    public Task getRecord(int id) {
+        String header = null;
+        try {
+            Statement statement = this.connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM TASK_HEADERS WHERE ID = " + id);
+
+            while (resultSet.next()) {
+                header = resultSet.getString("header");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return new Task(id, header);
+    }
+
+    public void insertRecord(Task task) {
+        try (PreparedStatement statement = this.connection.prepareStatement(
+                "INSERT INTO TASK_HEADERS(`id`, `header`) " +
+                        "VALUES(?, ?)")) {
+            statement.setObject(1, task.getId());
+            statement.setObject(2, task.getHeader());
+            // Выполняем запрос
+            statement.execute();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+    }
+
 }
