@@ -2,6 +2,7 @@ package general;
 
 import java.util.Date;
 
+
 public class Task {
     public static int lastID;
     private int id;
@@ -46,4 +47,5 @@ public class Task {
     public void setCreateTime(long createTime) {
         this.createTime = createTime;
     }
+
 }

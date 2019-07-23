@@ -23,7 +23,6 @@ public class FormControls {
 
     public void initialize() {
 
-
         fillList();
 
 
@@ -97,4 +96,5 @@ public class FormControls {
             e.printStackTrace();
         }
     }
+
 }
