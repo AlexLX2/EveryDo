@@ -7,9 +7,8 @@
            prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="general.FormControls">
 
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
-
-        <ListView fx:id="mainList" prefHeight="196.0" prefWidth="598.0" AnchorPane.bottomAnchor="0.0"
-                  AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0"/>
+        <TableView fx:id="mainList" prefHeight="350.0" prefWidth="598.0" AnchorPane.bottomAnchor="0.0"
+                   AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0"/>
 
     </AnchorPane>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="86.0" prefWidth="598.0">

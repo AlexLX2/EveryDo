@@ -3,16 +3,18 @@ package general;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 
 import java.sql.SQLException;
-import java.util.List;
+import java.util.ArrayList;
 
 public class FormControls {
     @FXML
-    private ListView mainList;
+    private TableView mainList;
 
     @FXML
     private Button btnAdd, btnDelete, btnEdit;
@@ -31,7 +33,7 @@ public class FormControls {
             public void handle(MouseEvent event) {
                 String text = txtAdd.getCharacters().toString();
                 if (!text.equals(""))
-                    mainList.getItems().add(text);
+                    mainList.getItems().add(new Task(Task.lastID + 1, text));
                 writeTaskIntoDB(text);
                 txtAdd.setText("");
             }
@@ -54,7 +56,7 @@ public class FormControls {
                     int idx = mainList.getSelectionModel().getSelectedIndex();
                     //txtAdd.setText(mainList.getSelectionModel().getSelectedItem().toString());
                     mainList.getItems().remove(idx);
-                    mainList.getItems().add(idx, txtAdd.getCharacters().toString());
+                    mainList.getItems().add(idx, new Task(idx, txtAdd.getCharacters().toString()));
                     mainList.getSelectionModel().select(idx);
                 } catch (IndexOutOfBoundsException e) {
                     //e.printStackTrace();
@@ -80,10 +82,22 @@ public class FormControls {
 
     public void fillList() {
         try {
-            List<Task> list = DBWork.getInstance().getAllRecords();
+            ArrayList<Task> list = (ArrayList<Task>) DBWork.getInstance().getAllRecords();
+
+            //mainList = new TableView();
+            TableColumn<String, Task> idcol = new TableColumn<>("ID");
+            TableColumn<String, Task> headercol = new TableColumn<>("Header");
+
+            idcol.setCellValueFactory(new PropertyValueFactory<>("id"));
+            headercol.setCellValueFactory(new PropertyValueFactory<>("header"));
+
+            mainList.getColumns().add(idcol);
+            mainList.getColumns().add(headercol);
+
             for (Task t : list) {
-                mainList.getItems().add(t.getHeader());
+                mainList.getItems().add(t);
             }
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
