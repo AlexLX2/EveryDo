@@ -22,13 +22,13 @@ public class DBWork {
 
     }
 
-    public static synchronized DBWork getInstance() throws SQLException {
+    static synchronized DBWork getInstance() throws SQLException {
         if (ourInstance == null)
             ourInstance = new DBWork();
         return ourInstance;
     }
 
-    public List<Task> getAllRecords() {
+    List<Task> getAllRecords() {
         List<Task> list = new ArrayList<>();
         try {
             Statement statement = this.connection.createStatement();
@@ -42,7 +42,7 @@ public class DBWork {
         return list;
     }
 
-    public Task getRecord(int id) {
+    Task getRecord(int id) {
         String header = null;
         try {
             Statement statement = this.connection.createStatement();
@@ -56,21 +56,13 @@ public class DBWork {
         return new Task(id, header);
     }
 
-    public void insertRecord(String header) {
-        try (PreparedStatement statement = this.connection.prepareStatement(
-                "INSERT INTO TASK_HEADERS(`id`, `header`) " +
-                        "VALUES(?, ?)")) {
-            statement.setObject(1, ++Task.lastID);
-            statement.setObject(2, header);
-            // Выполняем запрос
-            statement.execute();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+    void insertRecord(Task task) {
+        insertHeader(task.getId(), task.getHeader(), task.hasReminder());
+        insertBody(task.getId(), task.getBody());
 
     }
 
-    public int getLastID() {
+    private int getLastID() {
         int lastID = 0;
         try {
             Statement statement = this.connection.createStatement();
@@ -84,5 +76,86 @@ public class DBWork {
 
         return lastID;
     }
+
+    private void insertHeader(int id, String header, boolean hasReminder) {
+        try (PreparedStatement statement = this.connection.prepareStatement(
+                "INSERT INTO TASK_HEADERS(`id`, `header`, `hasreminder`) " +
+                        "VALUES(?, ?, ?)")) {
+            statement.setObject(1, id);
+            statement.setObject(2, header);
+            statement.setObject(3, hasReminder ? 1 : 0);
+            // Выполняем запрос
+            statement.execute();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void insertBody(int id, String body) {
+        try (PreparedStatement statement = this.connection.prepareStatement(
+                "INSERT INTO TASK_BODIES(`task_id`, `task_body`) " +
+                        "VALUES(?, ?)")) {
+            statement.setObject(1, id);
+            statement.setObject(2, body);
+            // Выполняем запрос
+            statement.execute();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    protected String getBodyByID(int id) {
+        String body = null;
+        try {
+            Statement statement = this.connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("SELECT TASK_BODY AS BODY FROM TASK_BODIES WHERE TASK_ID = " + id);
+            while (resultSet.next()) {
+                body = resultSet.getString("body");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return body;
+    }
+
+    protected boolean hasReminderByID(int id) {
+        boolean hasreminder = false;
+        try {
+            Statement statement = this.connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("SELECT HASREMINDER AS hasreminder FROM TASK_HEADERS WHERE ID = " + id);
+            while (resultSet.next()) {
+                hasreminder = resultSet.getInt("hasreminder") == 1;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return hasreminder;
+    }
+
+    void deleteTaskByID(int id) {
+        try {
+            Statement statement = this.connection.createStatement();
+            statement.addBatch("DELETE FROM TASK_HEADERS WHERE ID = " + id);
+            statement.addBatch("DELETE FROM TASK_BODIES WHERE TASK_ID = " + id);
+            statement.addBatch("DELETE FROM TASK_REMINDERS WHERE TASK_ID = " + id);
+            statement.executeBatch();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    void updateTaskByID(int id, String header, String body, boolean hasReminder) {
+        try {
+            Statement statement = this.connection.createStatement();
+            statement.addBatch("UPDATE TASK_HEADERS SET HEADER = '" + header + "' , HASREMINDER = " + (hasReminder ? 1 : 0) + "  WHERE ID = " + id);
+            statement.addBatch("REPLACE INTO TASK_BODIES (TASK_ID, TASK_BODY) VALUES (" + id + ", '" + body + "')");
+            statement.executeBatch();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
 
 }

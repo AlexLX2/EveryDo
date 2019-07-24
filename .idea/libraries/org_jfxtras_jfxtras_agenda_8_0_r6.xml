@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="org.jfxtras:jfxtras-agenda:8.0-r6" type="repository">
+    <properties maven-id="org.jfxtras:jfxtras-agenda:8.0-r6" />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/jfxtras/jfxtras-agenda/8.0-r6/jfxtras-agenda-8.0-r6.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/jfxtras/jfxtras-controls/8.0-r6/jfxtras-controls-8.0-r6.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/jfxtras/jfxtras-common/8.0-r6/jfxtras-common-8.0-r6.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/jfxtras/jfxtras-fxml/8.0-r6/jfxtras-fxml-8.0-r6.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -2,26 +2,70 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<SplitPane xmlns:fx="http://javafx.com/fxml/1" dividerPositions="0.8894472361809045" maxHeight="-Infinity"
-           maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="400.0"
-           prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="general.FormControls">
+<?import jfxtras.scene.control.CalendarPicker?>
+<SplitPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+           minWidth="-Infinity" orientation="VERTICAL" prefHeight="677.0" prefWidth="1179.0"
+           xmlns="http://javafx.com/javafx/8.0.172-ea" fx:controller="general.FormControls">
 
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
-        <TableView fx:id="mainList" prefHeight="350.0" prefWidth="598.0" AnchorPane.bottomAnchor="0.0"
-                   AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0"/>
+        <SplitPane dividerPositions="0.5151006711409396" prefHeight="351.0" prefWidth="598.0"
+                   AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                   AnchorPane.topAnchor="0.0">
+            <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                    <children>
+                        <TableView fx:id="mainList" prefHeight="349.0" prefWidth="175.0" AnchorPane.bottomAnchor="0.0"
+                                   AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0"/>
+                    </children>
+                </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="349.0" prefWidth="345.0">
+                    <children>
+                        <SplitPane fx:id="detailPane" dividerPositions="0.4543147208121827, 0.9137055837563451"
+                                   orientation="VERTICAL" prefHeight="349.0" prefWidth="286.0"
+                                   AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                                   AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <items>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                    <children>
+                                        <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="304.0"
+                                                   prefWidth="284.0" AnchorPane.bottomAnchor="0.0"
+                                                   AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                                                   AnchorPane.topAnchor="0.0">
+                                            <items>
 
-    </AnchorPane>
-    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="86.0" prefWidth="598.0">
+                                                <TextField fx:id="txtAdd"/>
+                                                <TextArea fx:id="txtDetails" prefHeight="171.0" prefWidth="284.0"/>
+                                            </items>
+                                        </SplitPane>
+                                    </children>
+                                </AnchorPane>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                    <children>
+                                        <CheckBox fx:id="hasReminders" layoutY="18.0" mnemonicParsing="false"
+                                                  nodeOrientation="RIGHT_TO_LEFT" text="Reminder:"/>
+                                        <CalendarPicker fx:id="reminderDate" layoutX="96.0" layoutY="14.0"
+                                                        nodeOrientation="LEFT_TO_RIGHT" showTime="true"/>
+                                    </children>
+                                </AnchorPane>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="86.0" prefWidth="284.0">
 
-        <Pane prefHeight="41.0" prefWidth="598.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
-              AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <Pane prefHeight="41.0" prefWidth="598.0" AnchorPane.bottomAnchor="0.0"
+                                          AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                                          AnchorPane.topAnchor="0.0">
+                                        <Button fx:id="btnAdd" layoutX="149.0" mnemonicParsing="false" text="Add"/>
+                                        <Button fx:id="btnEdit" layoutX="187.0" mnemonicParsing="false" text="Edit"/>
+                                        <Button fx:id="btnDelete" layoutX="223.0" mnemonicParsing="false"
+                                                text="Delete"/>
 
-            <TextField fx:id="txtAdd"/>
-            <Button fx:id="btnAdd" layoutX="149.0" mnemonicParsing="false" text="Add"/>
-            <Button fx:id="btnEdit" layoutX="187.0" mnemonicParsing="false" text="Edit"/>
-            <Button fx:id="btnDelete" layoutX="223.0" mnemonicParsing="false" text="Delete"/>
+                                    </Pane>
 
-        </Pane>
+                                </AnchorPane>
+                            </items>
+                        </SplitPane>
+                    </children>
+                </AnchorPane>
+            </items>
+        </SplitPane>
 
     </AnchorPane>
 

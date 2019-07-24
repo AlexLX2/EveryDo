@@ -8,14 +8,29 @@ public class Task {
     private int id;
     private String header;
     private String body;
+    private boolean hasReminder;
     private long createTime;
 
     public Task(int id, String header) {
         this.id = id;
         this.header = header;
-        this.createTime = new Date().getTime();
     }
 
+    public Task(int id, String header, String body, boolean hasReminder) {
+        this.id = id;
+        this.header = header;
+        this.body = body;
+        this.createTime = new Date().getTime();
+        this.hasReminder = hasReminder;
+    }
+
+    public boolean hasReminder() {
+        return hasReminder;
+    }
+
+    public void setReminder(boolean hasReminder) {
+        this.hasReminder = hasReminder;
+    }
 
     public int getId() {
         return id;
@@ -48,5 +63,6 @@ public class Task {
     public void setCreateTime(long createTime) {
         this.createTime = createTime;
     }
+
 
 }

@@ -28,7 +28,7 @@ public class Main extends Application {
         primaryStage.setTitle("EveryDo");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
-        startScheduleTask();
+        //  startScheduleTask();
     }
 
 
