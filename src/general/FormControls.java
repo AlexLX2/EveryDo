@@ -15,6 +15,9 @@ public class FormControls {
     private TableView mainList;
 
     @FXML
+    private Accordion mainTaskHeaderList;
+
+    @FXML
     private Button btnAdd, btnDelete, btnEdit;
 
     @FXML
@@ -38,10 +41,32 @@ public class FormControls {
 
 
         reminderDate.withShowTime(true);
-
+        reminderDate.setVisible(false);
 
         detailPane.setStyle("-fx-box-border: transparent; -fx-padding: 0;");
+        detailPane.setDividerPosition(0, 0.85);
+        detailPane.setDividerPosition(1, 0.90);
+        detailPane.setDividerPosition(2, 0.95);
 
+
+        hasReminders.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                if (hasReminders.isSelected()) {
+                    reminderDate.setVisible(hasReminders.isSelected());
+                    detailPane.setDividerPosition(0, 0.50);
+                    detailPane.setDividerPosition(1, 0.90);
+                    detailPane.setDividerPosition(2, 0.90);
+                } else {
+                    reminderDate.setVisible(hasReminders.isSelected());
+                    detailPane.setDividerPosition(0, 0.85);
+                    detailPane.setDividerPosition(1, 0.90);
+                    detailPane.setDividerPosition(2, 0.90);
+                }
+
+
+            }
+        });
 
         btnAdd.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
             @Override
@@ -130,17 +155,21 @@ public class FormControls {
 
     public void fillList() {
         try {
-            ArrayList<Task> list = (ArrayList<Task>) DBWork.getInstance().getAllRecords();
+            ArrayList<Task> list = DBWork.getInstance().getAllRecords();
 
-            //mainList = new TableView();
             TableColumn<String, Task> idcol = new TableColumn<>("ID");
-            TableColumn<String, Task> headercol = new TableColumn<>("Header");
-
             idcol.setCellValueFactory(new PropertyValueFactory<>("id"));
+            idcol.prefWidthProperty().bind(mainList.widthProperty().multiply(0.25)); // w * 1/4
+            idcol.setVisible(false);
+
+            TableColumn<String, Task> headercol = new TableColumn<>();
             headercol.setCellValueFactory(new PropertyValueFactory<>("header"));
+            headercol.prefWidthProperty().bind(mainList.widthProperty().multiply(1)); // w * 1/2
+
 
             mainList.getColumns().add(idcol);
             mainList.getColumns().add(headercol);
+
 
             for (Task t : list) {
                 mainList.getItems().add(t);
@@ -158,5 +187,6 @@ public class FormControls {
             e.printStackTrace();
         }
     }
+
 
 }

@@ -4,7 +4,6 @@ import org.sqlite.JDBC;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.List;
 
 public class DBWork {
 
@@ -28,8 +27,8 @@ public class DBWork {
         return ourInstance;
     }
 
-    List<Task> getAllRecords() {
-        List<Task> list = new ArrayList<>();
+    ArrayList<Task> getAllRecords() {
+        ArrayList<Task> list = new ArrayList<>();
         try {
             Statement statement = this.connection.createStatement();
             ResultSet resultSet = statement.executeQuery("SELECT * FROM TASK_HEADERS");
