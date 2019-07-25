@@ -30,7 +30,9 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("/general/mainWindows.fxml"));
 
         primaryStage.setTitle("EveryDo");
-        primaryStage.setScene(new Scene(root));
+        Scene scene = new Scene(root);
+        scene.getStylesheets().add(Main.class.getResource("bootstrap3.css").toExternalForm());
+        primaryStage.setScene(scene);
         primaryStage.show();
         //  startScheduleTask();
     }
