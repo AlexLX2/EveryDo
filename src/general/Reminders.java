@@ -7,10 +7,10 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Reminders {
+class Reminders {
 
 
-    public static void showAlert() {
+    static void showAlert() {
         Platform.runLater(() -> {
             ArrayList<Task> list = (ArrayList<Task>) getDueTasks();
             for (Task t : list) {

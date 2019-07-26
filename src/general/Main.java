@@ -39,11 +39,11 @@ public class Main extends Application {
 
 
     public void startScheduleTask() {
-        /**
-         * not using the taskHandle returned here, but it can be used to cancel
-         * the task, or check if it done (for recurring tasks, that not
-         * going to be very useful)
-         */
+//        /**
+//         * not using the taskHandle returned here, but it can be used to cancel
+//         * the task, or check if it done (for recurring tasks, that not
+//         * going to be very useful)
+//         */
         final ScheduledFuture<?> taskHandle = scheduler.scheduleAtFixedRate(
                 new Runnable() {
                     public void run() {

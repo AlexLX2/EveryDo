@@ -4,6 +4,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.input.MouseEvent;
 import jfxtras.scene.control.CalendarPicker;
 
@@ -73,9 +74,10 @@ public class FormControls {
             public void handle(MouseEvent event) {
                 String header = txtAdd.getCharacters().toString();
                 String body = txtDetails.getText();
-                Boolean hasReminder = hasReminders.isSelected();
+                boolean hasReminder = hasReminders.isSelected();
                 if (!header.equals("")) {
                     Task task = new Task(Task.lastID + 1, header, body, hasReminder);
+                    //noinspection unchecked
                     mainList.getItems().add(task);
                     writeTaskIntoDB(task);
                 }
@@ -117,6 +119,7 @@ public class FormControls {
                     DBWork.getInstance().updateTaskByID(id, header, body, hasreminder);
                     int idx = mainList.getSelectionModel().getSelectedIndex();
                     mainList.getItems().remove(idx);
+                    //noinspection unchecked
                     mainList.getItems().add(idx, updatedTask);
                     mainList.getSelectionModel().select(idx);
                 } catch (IndexOutOfBoundsException e) {
@@ -138,9 +141,7 @@ public class FormControls {
                     header = selectedTask.getHeader();
                     body = DBWork.getInstance().getBodyByID(selectedTask.getId());
                     hasReminder = DBWork.getInstance().hasReminderByID(selectedTask.getId());
-                } catch (NullPointerException e) {
-
-                } catch (SQLException e) {
+                } catch (NullPointerException | SQLException e) {
                     e.printStackTrace();
                 }
                 txtAdd.setText(header);
@@ -153,7 +154,8 @@ public class FormControls {
 
     }
 
-    public void fillList() {
+    @SuppressWarnings("unchecked")
+    private void fillList() {
         try {
             ArrayList<Task> list = DBWork.getInstance().getAllRecords();
 
@@ -162,10 +164,13 @@ public class FormControls {
             idcol.prefWidthProperty().bind(mainList.widthProperty().multiply(0.25)); // w * 1/4
             idcol.setVisible(false);
 
-            TableColumn<String, Task> headercol = new TableColumn<>();
-            headercol.setCellValueFactory(new PropertyValueFactory<>("header"));
-            headercol.prefWidthProperty().bind(mainList.widthProperty().multiply(1)); // w * 1/2
 
+            TableColumn<Task, String> headercol = new TableColumn<>();
+            headercol.setCellValueFactory(new PropertyValueFactory<>("header"));
+            headercol.setCellFactory(TextFieldTableCell.forTableColumn());
+            headercol.prefWidthProperty().bind(mainList.widthProperty().multiply(1)); // w * 1/2
+            headercol.setStyle("-fx-font-size :22px");
+            headercol.setEditable(true);
 
             mainList.getColumns().add(idcol);
             mainList.getColumns().add(headercol);
@@ -180,7 +185,7 @@ public class FormControls {
         }
     }
 
-    public void writeTaskIntoDB(Task task) {
+    private void writeTaskIntoDB(Task task) {
         try {
             DBWork.getInstance().insertRecord(task);
         } catch (SQLException e) {

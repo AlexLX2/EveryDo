@@ -4,19 +4,19 @@ import java.util.Date;
 
 
 public class Task {
-    public static int lastID;
+    static int lastID;
     private int id;
     private String header;
     private String body;
     private boolean hasReminder;
     private long createTime;
 
-    public Task(int id, String header) {
+    Task(int id, String header) {
         this.id = id;
         this.header = header;
     }
 
-    public Task(int id, String header, String body, boolean hasReminder) {
+    Task(int id, String header, String body, boolean hasReminder) {
         this.id = id;
         this.header = header;
         this.body = body;
@@ -24,7 +24,7 @@ public class Task {
         this.hasReminder = hasReminder;
     }
 
-    public boolean hasReminder() {
+    boolean hasReminder() {
         return hasReminder;
     }
 
@@ -32,7 +32,7 @@ public class Task {
         this.hasReminder = hasReminder;
     }
 
-    public int getId() {
+    int getId() {
         return id;
     }
 
@@ -40,7 +40,7 @@ public class Task {
 //        this.id = id;
 //    }
 
-    public String getHeader() {
+    String getHeader() {
         return header;
     }
 
@@ -48,7 +48,7 @@ public class Task {
 //        this.header = header;
 //    }
 
-    public String getBody() {
+    String getBody() {
         return body;
     }
 
