@@ -10,6 +10,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
 import jfxtras.scene.control.CalendarPicker;
 
 import java.sql.SQLException;
@@ -18,6 +19,9 @@ import java.util.ArrayList;
 public class FormControls {
     @FXML
     private TableView<Task> mainList;
+
+    @FXML
+    private VBox mainBox;
 
     @FXML
     private AnchorPane anchorMain;
@@ -150,10 +154,8 @@ public class FormControls {
         mainList.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
-                if (mouseEvent.getClickCount() >= 2)
-                //  showHideDetailPane();
-                {
-
+                if (mouseEvent.getClickCount() >= 2) {
+                    showHideDetailPane();
                 } else {
                     String header = null;
                     String body = null;
@@ -176,13 +178,13 @@ public class FormControls {
             }
         });
 
+
         testBtn.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
                 showHideDetailPane();
             }
         });
-
 
 
     }
@@ -220,8 +222,8 @@ public class FormControls {
 
                     Platform.runLater(() -> {
                         mainList.requestFocus();
-                        mainList.getSelectionModel().select(0);
-                        mainList.getFocusModel().focus(0);
+                        mainList.getSelectionModel().select(id);
+                        mainList.getFocusModel().focus(id, headercol);
                     });
 
                 } catch (SQLException e) {

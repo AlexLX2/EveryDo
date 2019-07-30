@@ -2,21 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Version 0.0.0.7 alpha&#10;Работа на ворнингами">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/JFX12.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/org_jfxtras_jfxtras_agenda_8_0_r6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/org_jfxtras_jfxtras_agenda_10_0_r1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/JFX_MacOS.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/JFX12.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EveryDo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/EveryDo.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/EveryDo/general/mainWindows.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EveryDo/general/mainWindows.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/general/DBWork.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/general/DBWork.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/general/FormControls.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/general/FormControls.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/general/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/general/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/general/Reminders.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/general/Reminders.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/general/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/general/Task.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/general/everydo.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/general/everydo.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/general/mainWindows.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/general/mainWindows.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/general/tableview-hide-headers.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/general/tableview-hide-headers.css" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -79,23 +73,32 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/general/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="526">
-              <caret line="47" column="32" lean-forward="true" selection-start-line="47" selection-start-column="32" selection-end-line="47" selection-end-column="32" />
+            <state relative-caret-position="285">
+              <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#541#542#0" expanded="true" />
+                <element signature="e#569#570#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/general/Reminders.java">
+        <entry file="file://$PROJECT_DIR$/src/general/mainWindows.fxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="18" column="61" selection-start-line="18" selection-start-column="61" selection-end-line="18" selection-end-column="61" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="192">
+              <caret line="21" column="6" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
+            </state>
+          </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar:///Library/Java/JavaVirtualMachines/javafx-sdk-12.0.2/lib/javafx.controls.jar!/com/sun/javafx/scene/control/inputmap/InputMap.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="84">
+              <caret line="172" column="16" selection-start-line="172" selection-start-column="16" selection-end-line="172" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -103,21 +106,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/general/FormControls.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="155">
-              <caret line="242" lean-forward="true" selection-start-line="242" selection-end-line="242" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="class#1195:1918" />
-                <element signature="class#1983:2653" />
-                <element signature="class#2722:3405" />
-                <element signature="class#3713:4952" />
-                <element signature="method#handle#0;class#3471:4710" />
-                <element signature="class#4995:6091" />
-                <element signature="class#5857:6007" />
-                <element signature="e#6243#6244#0" expanded="true" />
-                <element signature="e#6295#6296#0" expanded="true" />
-                <element signature="method#writeTaskIntoDB#0;class#FormControls#0" />
-              </folding>
+            <state relative-caret-position="264">
+              <caret line="231" column="57" selection-start-line="231" selection-start-column="57" selection-end-line="231" selection-end-column="57" />
             </state>
           </provider>
         </entry>
@@ -125,8 +115,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/general/DBWork.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="594">
-              <caret line="163" selection-start-line="163" selection-end-line="163" />
+            <state relative-caret-position="405">
+              <caret line="30" column="42" selection-start-line="30" selection-start-column="42" selection-end-line="30" selection-end-column="42" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -137,12 +127,28 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/general/Task.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="697">
-              <caret line="47" column="17" selection-start-line="47" selection-start-column="17" selection-end-line="47" selection-end-column="17" />
+            <state relative-caret-position="660">
+              <caret line="44" column="21" selection-start-line="44" selection-start-column="21" selection-end-line="44" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/javafx-src.zip!/javafx/fxml/FXMLLoader.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="36225">
+              <caret line="2569" selection-start-line="2569" selection-end-line="2569" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/general/Reminders.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="17" column="47" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="47" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#850#851#0" expanded="true" />
-                <element signature="e#879#880#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -158,6 +164,12 @@
         <option value="CSS" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>focus</find>
+      <find>onaction</find>
+    </findStrings>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -183,12 +195,12 @@
         <option value="$PROJECT_DIR$/src/sample/Controller.java" />
         <option value="$PROJECT_DIR$/src/general/Controller.java" />
         <option value="$PROJECT_DIR$/src/general/CalendarTimePicker.java" />
-        <option value="$PROJECT_DIR$/src/general/Main.java" />
         <option value="$PROJECT_DIR$/src/general/Reminders.java" />
         <option value="$PROJECT_DIR$/src/general/Task.java" />
-        <option value="$PROJECT_DIR$/src/general/mainWindows.fxml" />
         <option value="$PROJECT_DIR$/src/general/tableview-hide-headers.css" />
         <option value="$PROJECT_DIR$/src/general/DBWork.java" />
+        <option value="$PROJECT_DIR$/src/general/mainWindows.fxml" />
+        <option value="$PROJECT_DIR$/src/general/Main.java" />
         <option value="$PROJECT_DIR$/src/general/FormControls.java" />
       </list>
     </option>
@@ -235,25 +247,25 @@
             <path>
               <item name="EveryDo" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="JFX12" type="70bed36:NamedLibraryElementNode" />
+              <item name="JFX MacOS" type="70bed36:NamedLibraryElementNode" />
             </path>
             <path>
               <item name="EveryDo" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="JFX12" type="70bed36:NamedLibraryElementNode" />
+              <item name="JFX MacOS" type="70bed36:NamedLibraryElementNode" />
               <item name="javafx.controls.jar" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="EveryDo" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="JFX12" type="70bed36:NamedLibraryElementNode" />
+              <item name="JFX MacOS" type="70bed36:NamedLibraryElementNode" />
               <item name="javafx.controls.jar" type="462c0819:PsiDirectoryNode" />
               <item name="javafx" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="EveryDo" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="JFX12" type="70bed36:NamedLibraryElementNode" />
+              <item name="JFX MacOS" type="70bed36:NamedLibraryElementNode" />
               <item name="javafx.controls.jar" type="462c0819:PsiDirectoryNode" />
               <item name="javafx" type="462c0819:PsiDirectoryNode" />
               <item name="control" type="462c0819:PsiDirectoryNode" />
@@ -261,11 +273,20 @@
             <path>
               <item name="EveryDo" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="JFX12" type="70bed36:NamedLibraryElementNode" />
+              <item name="JFX MacOS" type="70bed36:NamedLibraryElementNode" />
               <item name="javafx.controls.jar" type="462c0819:PsiDirectoryNode" />
               <item name="javafx" type="462c0819:PsiDirectoryNode" />
               <item name="control" type="462c0819:PsiDirectoryNode" />
               <item name="behavior" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EveryDo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="JFX MacOS" type="70bed36:NamedLibraryElementNode" />
+              <item name="javafx.controls.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="javafx" type="462c0819:PsiDirectoryNode" />
+              <item name="control" type="462c0819:PsiDirectoryNode" />
+              <item name="inputmap" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -289,13 +310,13 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dynamic.classpath" value="false" />
     <property name="last_opened_file_path" value="C:/Program Files/Java/javafx-sdk-12.0.1/lib" />
-    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="project.propCompiler" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -337,7 +358,7 @@
     <configuration name="GFX" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="general.Main" />
       <module name="EveryDo" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Program Files\Java\javafx-sdk-12.0.1\lib&quot; --add-modules javafx.controls,javafx.fxml" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;/Library/Java/JavaVirtualMachines/javafx-sdk-12.0.2/lib&quot; --add-modules javafx.controls,javafx.fxml" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="general.*" />
@@ -488,10 +509,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
+    <frame x="0" y="0" width="1680" height="1050" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.27261615" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.16910867" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
@@ -500,8 +521,8 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32969603" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.47032475" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.65003896" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.46951872" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.25989306" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32969603" />
@@ -511,7 +532,7 @@
       <window_info anchor="bottom" id="Changes" order="10" />
       <window_info anchor="bottom" id="Profiler" order="11" />
       <window_info anchor="bottom" id="Event Log" order="12" weight="0.32969603" />
-      <window_info anchor="bottom" id="Messages" order="13" weight="0.3289166" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.32834226" />
       <window_info anchor="bottom" id="Terminal" order="14" weight="0.32969603" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -585,6 +606,16 @@
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar:///Library/Java/JavaVirtualMachines/javafx-sdk-12.0.2/lib/javafx.controls.jar!/com/sun/javafx/scene/control/behavior/TableViewBehaviorBase.class</url>
+          <line>819</line>
+          <properties />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="((JDBC4ResultSet)resultSet).colsMeta" custom="org.sqlite.jdbc4.JDBC4ResultSet" />
@@ -651,7 +682,13 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/sample/sample.fxml" />
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/javafx-src.zip!/javafx/fxml/FXMLLoader.java" />
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/javafx-src.zip!/javafx/fxml/FXMLLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36225">
+          <caret line="2569" selection-start-line="2569" selection-end-line="2569" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/EveryDo.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -672,13 +709,8 @@
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_211/src.zip!/java/lang/Runnable.java" />
     <entry file="file://$PROJECT_DIR$/src/general/Task.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="47" column="17" selection-start-line="47" selection-start-column="17" selection-end-line="47" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#850#851#0" expanded="true" />
-            <element signature="e#879#880#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="660">
+          <caret line="44" column="21" selection-start-line="44" selection-start-column="21" selection-end-line="44" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -689,75 +721,69 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/javafx-sdk-12.0.1/lib/javafx.base.jar!/javafx/event/EventHandler.class">
+    <entry file="jar://C:/Program Files/Java/javafx-sdk-12.0.1/lib/javafx.base.jar!/javafx/event/EventHandler.class" />
+    <entry file="file://$PROJECT_DIR$/src/general/DBWork.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+        <state relative-caret-position="405">
+          <caret line="30" column="42" selection-start-line="30" selection-start-column="42" selection-end-line="30" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
+    <entry file="jar://C:/Program Files/Java/javafx-sdk-12.0.1/lib/javafx.controls.jar!/com/sun/javafx/scene/control/behavior/TableViewBehaviorBase.class" />
     <entry file="file://$PROJECT_DIR$/src/general/Reminders.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="18" column="61" selection-start-line="18" selection-start-column="61" selection-end-line="18" selection-end-column="61" />
+        <state relative-caret-position="180">
+          <caret line="17" column="47" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/javafx-sdk-12.0.2/lib/javafx.controls.jar!/com/sun/javafx/scene/control/inputmap/InputMap.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="172" column="16" selection-start-line="172" selection-start-column="16" selection-end-line="172" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/javafx-sdk-12.0.2/lib/javafx.controls.jar!/com/sun/javafx/scene/control/behavior/TableViewBehaviorBase.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="829" column="47" lean-forward="true" selection-start-line="829" selection-start-column="47" selection-end-line="829" selection-end-column="47" />
+          <folding>
+            <element signature="e#0#47256#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/general/mainWindows.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="52" column="34" lean-forward="true" selection-start-line="52" selection-start-column="34" selection-end-line="52" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/general/DBWork.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="163" selection-start-line="163" selection-end-line="163" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="192">
+          <caret line="21" column="6" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
         </state>
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/general/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="526">
-          <caret line="47" column="32" lean-forward="true" selection-start-line="47" selection-start-column="32" selection-end-line="47" selection-end-column="32" />
+        <state relative-caret-position="285">
+          <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#541#542#0" expanded="true" />
+            <element signature="e#569#570#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/javafx-sdk-12.0.1/lib/javafx.controls.jar!/com/sun/javafx/scene/control/behavior/TableViewBehaviorBase.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="819" selection-start-line="819" selection-end-line="819" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/general/FormControls.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="242" lean-forward="true" selection-start-line="242" selection-end-line="242" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="class#1195:1918" />
-            <element signature="class#1983:2653" />
-            <element signature="class#2722:3405" />
-            <element signature="class#3713:4952" />
-            <element signature="method#handle#0;class#3471:4710" />
-            <element signature="class#4995:6091" />
-            <element signature="class#5857:6007" />
-            <element signature="e#6243#6244#0" expanded="true" />
-            <element signature="e#6295#6296#0" expanded="true" />
-            <element signature="method#writeTaskIntoDB#0;class#FormControls#0" />
-          </folding>
+        <state relative-caret-position="264">
+          <caret line="231" column="57" selection-start-line="231" selection-start-column="57" selection-end-line="231" selection-end-column="57" />
         </state>
       </provider>
     </entry>
@@ -825,7 +851,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>org.jfxtras:jfxtras-agenda:10.0-r1</last-edited>
+          <last-edited>JFX MacOS</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
