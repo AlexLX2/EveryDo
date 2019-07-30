@@ -8,6 +8,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="sqlite-jdbc-3.27.2.1" level="project" />
-    <orderEntry type="library" name="org.jfxtras:jfxtras-agenda:8.0-r6" level="project" />
+    <orderEntry type="library" name="JFX12" level="project" />
+    <orderEntry type="library" name="org.jfxtras:jfxtras-agenda:10.0-r1" level="project" />
   </component>
 </module>

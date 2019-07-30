@@ -23,6 +23,7 @@ class Reminders {
     }
 
     private static List<Task> getDueTasks() {
+        //TODO сделать выборку задач по датам
         List<Task> dueTasks = new ArrayList<>();
         try {
             dueTasks.add(DBWork.getInstance().getRecord(1));

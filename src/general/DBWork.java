@@ -5,7 +5,7 @@ import org.sqlite.JDBC;
 import java.sql.*;
 import java.util.ArrayList;
 
-public class DBWork {
+class DBWork {
 
     private static final String CONNSTR = "jdbc:sqlite:src/general/everydo.db";
 
@@ -103,7 +103,7 @@ public class DBWork {
         }
     }
 
-    protected String getBodyByID(int id) {
+    String getBodyByID(int id) {
         String body = null;
         try {
             Statement statement = this.connection.createStatement();
@@ -118,7 +118,7 @@ public class DBWork {
         return body;
     }
 
-    protected boolean hasReminderByID(int id) {
+    boolean hasReminderByID(int id) {
         boolean hasreminder = false;
         try {
             Statement statement = this.connection.createStatement();
@@ -151,10 +151,20 @@ public class DBWork {
             statement.addBatch("UPDATE TASK_HEADERS SET HEADER = '" + header + "' , HASREMINDER = " + (hasReminder ? 1 : 0) + "  WHERE ID = " + id);
             statement.addBatch("REPLACE INTO TASK_BODIES (TASK_ID, TASK_BODY) VALUES (" + id + ", '" + body + "')");
             statement.executeBatch();
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
+    void updateTaskHeaderByID(int id, String header) {
+        try {
+            Statement statement = this.connection.createStatement();
+            statement.execute("UPDATE TASK_HEADERS SET HEADER = '" + header + "' WHERE ID = " + id);
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 
 }

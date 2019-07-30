@@ -31,7 +31,7 @@ public class Main extends Application {
 
         primaryStage.setTitle("EveryDo");
         Scene scene = new Scene(root);
-        scene.getStylesheets().add(Main.class.getResource("bootstrap3.css").toExternalForm());
+        //scene.getStylesheets().add(Main.class.getResource("bootstrap3.css").toExternalForm());
         primaryStage.setScene(scene);
         primaryStage.show();
         //  startScheduleTask();

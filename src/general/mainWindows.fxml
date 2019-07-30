@@ -4,127 +4,122 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 <?import jfxtras.scene.control.CalendarPicker?>
-<SplitPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
-           minWidth="-Infinity" orientation="VERTICAL" prefHeight="677.0" prefWidth="1179.0"
-           xmlns="http://javafx.com/javafx/8.0.172-ea" fx:controller="general.FormControls">
-
-    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
-        <SplitPane dividerPositions="0.5151006711409396" prefHeight="351.0" prefWidth="598.0"
-                   AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
-                   AnchorPane.topAnchor="0.0">
+<VBox xmlns:fx="http://javafx.com/fxml/1" fx:id="mainBox" xmlns="http://javafx.com/javafx/11.0.1"
+      fx:controller="general.FormControls">
+    <children>
+        <MenuBar focusTraversable="false">
+            <menus>
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Close"/>
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
             <items>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
-                    <children>
-                        <Accordion fx:id="mainTaskHeaderList" prefHeight="673.0" prefWidth="602.0"
-                                   AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
-                                   AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                            <panes>
-                                <TitledPane animated="false" text="Main tasks">
-                                    <content>
-                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0"
-                                                    style="-fx-padding: 0;">
-                                            <children>
-                                                <TableView fx:id="mainList" editable="true" layoutX="8.6" layoutY="12.6"
-                                                           prefHeight="647.0" prefWidth="600.0"
-                                                           stylesheets="@tableview-hide-headers.css"
-                                                           AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
-                                                           AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0"/>
-                                            </children>
-                                        </AnchorPane>
-                                    </content>
-                                    <font>
-                                        <Font size="22.0"/>
-                                    </font>
-                                </TitledPane>
-                                <TitledPane animated="false" text="Home tasks">
-                                    <content>
-                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0"
-                                                    prefWidth="200.0"/>
-                                    </content>
-                                    <font>
-                                        <Font size="22.0"/>
-                                    </font>
-                                </TitledPane>
-                            </panes>
-                        </Accordion>
-                    </children>
-                </AnchorPane>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="349.0" prefWidth="345.0">
-                    <children>
-                        <SplitPane fx:id="detailPane" dividerPositions="0.4543147208121827, 0.9137055837563451"
-                                   orientation="VERTICAL" prefHeight="349.0" prefWidth="286.0"
-                                   AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
-                                   AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                            <items>
-                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
-                                    <children>
-                                        <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="304.0"
-                                                   prefWidth="284.0" AnchorPane.bottomAnchor="0.0"
-                                                   AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
-                                                   AnchorPane.topAnchor="0.0">
-                                            <items>
-
-                                                <TextField fx:id="txtAdd">
-                                                    <font>
-                                                        <Font size="22.0"/>
-                                                    </font>
-                                                </TextField>
-                                                <TextArea fx:id="txtDetails" prefHeight="171.0" prefWidth="284.0">
-                                                    <font>
-                                                        <Font size="22.0"/>
-                                                    </font>
-                                                </TextArea>
-                                            </items>
-                                        </SplitPane>
-                                    </children>
-                                </AnchorPane>
-                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
-                                    <children>
-                                        <CalendarPicker fx:id="reminderDate" layoutX="96.0" layoutY="14.0"
-                                                        nodeOrientation="LEFT_TO_RIGHT" showTime="true"/>
-                                    </children>
-                                </AnchorPane>
-                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="86.0" prefWidth="284.0">
-
-                                    <Pane prefHeight="41.0" prefWidth="598.0" AnchorPane.bottomAnchor="0.0"
-                                          AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
-                                          AnchorPane.topAnchor="0.0">
-                                        <Button fx:id="btnAdd" layoutX="320.0" layoutY="4.0" mnemonicParsing="false"
-                                                text="Add">
-                                            <font>
-                                                <Font size="22.0"/>
-                                            </font>
-                                        </Button>
-                                        <Button fx:id="btnEdit" layoutX="391.0" layoutY="4.0" mnemonicParsing="false"
-                                                text="Edit">
-                                            <font>
-                                                <Font size="22.0"/>
-                                            </font>
-                                        </Button>
-                                        <Button fx:id="btnDelete" layoutX="458.0" layoutY="4.0" mnemonicParsing="false"
-                                                text="Delete">
-                                            <font>
-                                                <Font size="22.0"/>
-                                            </font>
-                                        </Button>
-                                        <CheckBox fx:id="hasReminders" layoutX="33.0" layoutY="12.0"
-                                                  mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT"
-                                                  text="Remind me:">
-                                            <font>
-                                                <Font size="22.0"/>
-                                            </font>
-                                        </CheckBox>
-
-                                    </Pane>
-
-                                </AnchorPane>
-                            </items>
-                        </SplitPane>
-                    </children>
-                </AnchorPane>
+                <MenuItem mnemonicParsing="false" text="Delete"/>
             </items>
-        </SplitPane>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                    <items>
+                        <MenuItem fx:id="testBtn" mnemonicParsing="false" text="About"/>
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <AnchorPane prefHeight="1024.0" prefWidth="768.0">
+            <SplitPane fx:id="generalPane" dividerPositions="0.47911227154047" focusTraversable="false"
+                       prefHeight="351.0" prefWidth="453.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                       AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                <items>
+                    <AnchorPane fx:id="anchorMain" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                        <children>
+                            <TableView fx:id="mainList" editable="true" layoutY="14.0" prefHeight="673.0"
+                                       prefWidth="602.0" stylesheets="@tableview-hide-headers.css"
+                                       tableMenuButtonVisible="true" AnchorPane.bottomAnchor="-14.0"
+                                       AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                                       AnchorPane.topAnchor="14.0"/>
+                        </children>
+                    </AnchorPane>
+                    <AnchorPane fx:id="anchorDetail" minHeight="0.0" minWidth="0.0" prefHeight="349.0"
+                                prefWidth="345.0">
+                        <children>
+                            <SplitPane fx:id="detailPane" disable="true"
+                                       dividerPositions="0.453921568627451, 0.8156862745098039" focusTraversable="false"
+                                       orientation="VERTICAL" prefHeight="349.0" prefWidth="286.0"
+                                       AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                                       AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <items>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                        <children>
+                                            <SplitPane dividerPositions="0.5" focusTraversable="false"
+                                                       orientation="VERTICAL" prefHeight="304.0" prefWidth="284.0"
+                                                       AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                                                       AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                <items>
 
-    </AnchorPane>
+                                                    <TextField fx:id="txtAdd" focusTraversable="false">
+                                                        <font>
+                                                            <Font size="22.0"/>
+                                                        </font>
+                                                    </TextField>
+                                                    <TextArea fx:id="txtDetails" focusTraversable="false"
+                                                              prefHeight="171.0" prefWidth="284.0">
+                                                        <font>
+                                                            <Font size="22.0"/>
+                                                        </font>
+                                                    </TextArea>
+                                                </items>
+                                            </SplitPane>
+                                        </children>
+                                    </AnchorPane>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                        <children>
+                                            <CalendarPicker fx:id="reminderDate" focusTraversable="false" layoutX="96.0"
+                                                            layoutY="14.0" nodeOrientation="LEFT_TO_RIGHT"
+                                                            showTime="true"/>
+                                        </children>
+                                    </AnchorPane>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="86.0" prefWidth="284.0">
 
-</SplitPane>
+                                        <Pane prefHeight="41.0" prefWidth="598.0" AnchorPane.bottomAnchor="0.0"
+                                              AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                                              AnchorPane.topAnchor="0.0">
+                                            <Button fx:id="btnAdd" layoutX="33.0" layoutY="52.0" mnemonicParsing="false"
+                                                    text="Add">
+                                                <font>
+                                                    <Font size="22.0"/>
+                                                </font>
+                                            </Button>
+                                            <Button fx:id="btnEdit" layoutX="111.0" layoutY="52.0"
+                                                    mnemonicParsing="false" text="Edit">
+                                                <font>
+                                                    <Font size="22.0"/>
+                                                </font>
+                                            </Button>
+                                            <Button fx:id="btnDelete" layoutX="190.0" layoutY="52.0"
+                                                    mnemonicParsing="false" text="Delete">
+                                                <font>
+                                                    <Font size="22.0"/>
+                                                </font>
+                                            </Button>
+                                            <CheckBox fx:id="hasReminders" layoutX="33.0" layoutY="12.0"
+                                                      mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT"
+                                                      text="Remind me:">
+                                                <font>
+                                                    <Font size="22.0"/>
+                                                </font>
+                                            </CheckBox>
+
+                                        </Pane>
+
+                                    </AnchorPane>
+                                </items>
+                            </SplitPane>
+                        </children>
+                    </AnchorPane>
+                </items>
+            </SplitPane>
+
+        </AnchorPane>
+    </children>
+</VBox>

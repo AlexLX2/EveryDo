@@ -24,6 +24,7 @@ public class Task {
         this.hasReminder = hasReminder;
     }
 
+
     boolean hasReminder() {
         return hasReminder;
     }
@@ -40,8 +41,8 @@ public class Task {
 //        this.id = id;
 //    }
 
-    String getHeader() {
-        return header;
+    public String getHeader() {
+        return this.header;
     }
 
 //    public void setHeader(String header) {
