@@ -10,5 +10,6 @@
     <orderEntry type="library" name="sqlite-jdbc-3.27.2.1" level="project" />
     <orderEntry type="library" name="org.jfxtras:jfxtras-agenda:10.0-r1" level="project" />
     <orderEntry type="library" name="JFX MacOS" level="project" />
+    <orderEntry type="library" name="JFX Win" level="project" />
   </component>
 </module>

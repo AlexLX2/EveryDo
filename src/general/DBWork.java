@@ -57,7 +57,7 @@ class DBWork {
 
     void insertRecord(Task task) {
         insertHeader(task.getId(), task.getHeader(), task.hasReminder());
-        insertBody(task.getId(), task.getBody());
+        //insertBody(task.getId(), task.getBody());
 
     }
 
@@ -88,6 +88,7 @@ class DBWork {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        Task.lastID++;
     }
 
     private void insertBody(int id, String body) {
